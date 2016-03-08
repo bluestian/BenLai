@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_anim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+         <ImageView
+             android:id="@+id/iv_but_view"
+             android:layout_marginBottom="20dp"
+             android:layout_width="100dp"
+             android:layout_height="40dp"
+             android:background="@mipmap/welcome_open"
+             android:visibility="invisible"
+             android:scaleType="centerInside"
+             android:layout_gravity="center|bottom"/>
+           <ImageView
+               android:id="@+id/iv_welcom5"
+               android:visibility="invisible"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center|bottom"
+               android:src="@mipmap/welcome_image_1"/>
+     <LinearLayout
+         android:id="@+id/ll_layout"
+         android:orientation="horizontal"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
+         android:layout_margin="8dp"
+         >
+         <ImageView
+             android:id="@+id/iv_ic_guide"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:scaleType="fitXY"
+             android:layout_marginRight="12dp"
+             android:clickable="true"
+             android:src="@drawable/points"
+             />
+         <ImageView
+             android:id="@+id/iv_ic_guide1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:clickable="true"
+             android:scaleType="fitXY"
+             android:src="@drawable/points"
+             />
+
+     </LinearLayout>
+</FrameLayout>
