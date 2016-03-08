@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/iv_welcom4"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"
+        android:src="@mipmap/welcome_image_4"/>
+
+    <ImageView
+        android:id="@+id/iv_welcom3"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/iv_welcom4"
+        android:src="@mipmap/welcome_image_3"/>
+    <ImageView
+        android:id="@+id/iv_welcom2"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/iv_welcom3"
+        android:src="@mipmap/welcome_image_2"/>
+    <ImageView
+        android:id="@+id/iv_welcom1"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/iv_welcom2"
+        android:src="@mipmap/welcome_image_1"/>
+
+</RelativeLayout>

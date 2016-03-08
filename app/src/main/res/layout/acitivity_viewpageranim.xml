@@ -9,6 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <!--导航页动画图片；-->
+        <include layout="@layout/activity_welcom_include"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            />
+
          <ImageView
              android:id="@+id/iv_but_view"
              android:layout_marginBottom="20dp"
@@ -24,7 +31,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_gravity="center|bottom"
-               android:src="@mipmap/welcome_image_1"/>
+               android:src="@mipmap/welcome_image_5"/>
      <LinearLayout
          android:id="@+id/ll_layout"
          android:orientation="horizontal"

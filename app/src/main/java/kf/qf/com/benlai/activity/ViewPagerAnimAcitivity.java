@@ -1,9 +1,11 @@
 package kf.qf.com.benlai.activity;
 
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -24,11 +26,14 @@ public class ViewPagerAnimAcitivity extends BaseActivity implements View.OnClick
     private ImageView[] point;
     private  int currentIndex;
     private  ImageView ivBtn;//跳转的按钮
-    private  ImageView ivBtn5;
+    private  ImageView ivBtn5,ivBtn4,ivBtn3,ivBtn2,ivBtn1;
     private  static  final  int [] pics={R.mipmap.welcome_one,R.mipmap.welcome_two
     };
     @Override
     protected int contentViewGetid() {
+        //进行导航页的全屏设置
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         return R.layout.acitivity_viewpageranim;
     }
 
@@ -43,6 +48,12 @@ public class ViewPagerAnimAcitivity extends BaseActivity implements View.OnClick
 
         ivBtn = (ImageView) findViewById(R.id.iv_but_view);
         ivBtn5= (ImageView) findViewById(R.id.iv_welcom5);
+
+        ivBtn4= (ImageView) findViewById(R.id.iv_welcom4);
+        ivBtn3= (ImageView) findViewById(R.id.iv_welcom3);
+        ivBtn2= (ImageView) findViewById(R.id.iv_welcom2);
+        ivBtn1= (ImageView) findViewById(R.id.iv_welcom1);
+
 
     }
     //初始化小点图片；
@@ -115,15 +126,30 @@ public class ViewPagerAnimAcitivity extends BaseActivity implements View.OnClick
 
             ObjectAnimator animator = ObjectAnimator.ofFloat(ivBtn5, "translationY",  -800f);
             ObjectAnimator animator4 = ObjectAnimator.ofFloat(ivBtn5, "alpha", 1.0f, 0.2f, 1.0F);
-           // AnimationSet set = new AnimationSet();
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.play(animator).before(animator4);
 
-            animator.setDuration(500);
-            animator.start();
+            animatorSet.setDuration(200);
+            animatorSet.start();
 
-
+            ivBtn1.setVisibility(View.INVISIBLE);
+            ivBtn2.setVisibility(View.INVISIBLE);
+            ivBtn3.setVisibility(View.INVISIBLE);
+            ivBtn4.setVisibility(View.INVISIBLE);
         }
         else{
-
+            ivBtn1.setVisibility(View.VISIBLE);
+            ivBtn2.setVisibility(View.VISIBLE);
+            ivBtn3.setVisibility(View.VISIBLE);
+            ivBtn4.setVisibility(View.VISIBLE);
+            ObjectAnimator animator1 = ObjectAnimator.ofFloat(ivBtn1, "translationY",  -600f);
+            ObjectAnimator animator2 = ObjectAnimator.ofFloat(ivBtn2, "translationY",  -600f);
+            ObjectAnimator animator3 = ObjectAnimator.ofFloat(ivBtn3, "translationY",  -600f);
+            ObjectAnimator animator4 = ObjectAnimator.ofFloat(ivBtn4, "translationY",  -600f);
+            AnimatorSet animatorSet = new AnimatorSet();
+            //animatorSet.play(animator1).before(animator2).before(animator3).before(animator4);
+            animatorSet.playSequentially(animator1,animator2,animator3,animator4);
+            animatorSet.setDuration(1000).start();
             ivBtn.setVisibility(View.INVISIBLE);
             ivBtn5.setVisibility(View.INVISIBLE);
         }
