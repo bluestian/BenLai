@@ -1,4 +1,4 @@
-package base;
+package kf.qf.com.benlai.base;
 
 import android.content.Intent;
 import android.os.Bundle;

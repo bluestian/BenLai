@@ -1,4 +1,4 @@
-package adapter;
+package kf.qf.com.benlai.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -17,12 +17,12 @@ import kf.qf.com.benlai.R;
  *导航页的viewpager的适配器；
     }
  */
-public  class ViewPagerAdapter  extends PagerAdapter {
+public  class ViewPagerAdapter extends PagerAdapter {
     private  static  final  int [] pics={R.mipmap.welcome_one,R.mipmap.welcome_two
            };
      private  ArrayList<View> views;
      private  Context context;
-      public  ViewPagerAdapter (Context context,ArrayList<View> views){
+      public ViewPagerAdapter(Context context, ArrayList<View> views){
               this.context=context;
               this.views = views;
           LinearLayout.LayoutParams  lparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,

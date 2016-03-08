@@ -3,8 +3,8 @@ package kf.qf.com.benlai.activity;
 import android.content.Intent;
 import android.os.Handler;
 
-import base.BaseActivity;
 import kf.qf.com.benlai.R;
+import kf.qf.com.benlai.base.BaseActivity;
 
 
 /**
@@ -24,8 +24,15 @@ public class WelcomActivity extends BaseActivity {
         handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    startActivity(new Intent(WelcomActivity.this, ViewPagerAnimAcitivity.class)
-                            , R.anim.welcom_anim_translate, R.anim.welcom_anim_scale);
+                    boolean aBoolean = getSharedPreferences("flag", MODE_PRIVATE).getBoolean("isFirst",true);
+                    if (aBoolean==false){
+                        startActivity(new Intent(WelcomActivity.this,MainActivity.class));
+                        finish();
+                    }else {
+                        startActivity(new Intent(WelcomActivity.this, ViewPagerAnimAcitivity.class)
+                                , R.anim.welcom_anim_translate, R.anim.welcom_anim_scale);
+                        finish();
+                    }
 
                 }
             }, 200);

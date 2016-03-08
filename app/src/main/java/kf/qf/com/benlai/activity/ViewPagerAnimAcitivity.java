@@ -3,6 +3,7 @@ package kf.qf.com.benlai.activity;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.WindowManager;
@@ -11,9 +12,9 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-import adapter.ViewPagerAdapter;
-import base.BaseActivity;
 import kf.qf.com.benlai.R;
+import kf.qf.com.benlai.adapter.ViewPagerAdapter;
+import kf.qf.com.benlai.base.BaseActivity;
 
 /**
  * Created by 84903 on 2016/3/7.
@@ -116,7 +117,13 @@ public class ViewPagerAnimAcitivity extends BaseActivity implements View.OnClick
             ivBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(ViewPagerAnimAcitivity.this, MainActivity.class));
+
+
+                    startActivity(new Intent(ViewPagerAnimAcitivity.this, CityActivity.class));
+                    SharedPreferences.Editor editor = getSharedPreferences("flag", MODE_PRIVATE).edit();
+                    editor.putBoolean("isFirst",false);
+                    editor.commit();
+                    finish();
                 }
             });
 

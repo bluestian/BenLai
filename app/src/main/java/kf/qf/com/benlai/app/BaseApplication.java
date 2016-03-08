@@ -14,10 +14,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         OkHttpUtil.initOkHttp();
-
-
         Fresco.initialize(this);
     }
 }

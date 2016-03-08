@@ -1,7 +1,7 @@
 package kf.qf.com.benlai.activity;
 
-import base.BaseActivity;
 import kf.qf.com.benlai.R;
+import kf.qf.com.benlai.base.BaseActivity;
 
 
 public class MainActivity extends BaseActivity {
