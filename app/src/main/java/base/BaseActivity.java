@@ -11,9 +11,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(contentViewGetid());
         init();//初始化的工作；
         loadData();//下载数据的方法；
+
+
+
     }
 
     protected void init() {
