@@ -1,5 +1,7 @@
 package kf.qf.com.benlai.activity;
 
+import android.view.View;
+
 import kf.qf.com.benlai.R;
 import kf.qf.com.benlai.base.BaseActivity;
 
@@ -21,4 +23,9 @@ public class MainActivity extends BaseActivity {
 
 
         }
+
+    public void btn(View view){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fg_newpro,new NewProductFragment()).commit();
+    }
 }

@@ -25,6 +25,16 @@ public abstract class  BaseFragment extends Fragment {
         loadData();
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getData(getArguments());
+    }
+    //fragment中获取数据的封装方法；
+    protected void getData(Bundle arguments) {
+
+    }
+
     protected void loadData() {
 
     }

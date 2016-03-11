@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/fd"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        fresco:placeholderImage="@mipmap/logo2"
+         android:elevation="0dp"
+        app:layout_behavior="kf.qf.com.benlai.quote.ScrollBehavior"/>
+
+   <android.support.v7.widget.RecyclerView
+        android:id="@+id/gd_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="90dp"
+        android:numColumns="2"
+       android:elevation="0dp"
+       app:layout_behavior="kf.qf.com.benlai.quote.MyBehavior"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

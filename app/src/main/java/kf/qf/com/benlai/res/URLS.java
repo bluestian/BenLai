@@ -20,7 +20,7 @@ public interface URLS {
     public static final String FENLEI = "www.benlai.com/ICategory/NewC1List?systemVersion=4.4.2&phoneModel=N1&deviceId=35228404067080800%3AFF%3AC3%3A08%3A2C%3ABB&version=2.1.5&source=3&pageid=com.android.benlai.activity.MainActivity&localcity=246&sign=B6E6F9B13CF5F20AC8142F53897E8D93&channel=xiaomi";
 
     //新品
-    public static final String XINPIN = "www.benlai.com/IProductList/NewAppProducts?systemVersion=4.4.2&phoneModel=N1&deviceId=35228404067080800%3AFF%3AC3%3A08%3A2C%3ABB&version=2.1.5&source=3&sort=0&pageid=com.android.benlai.activity.MainActivity&localcity=246&offset=0&sign=A77CD93542DC5BFC1AA60AE9001B2630&limit=20&channel=xiaomi";
+    public static final String XINPIN = "http://www.benlai.com/IProductList/NewAppProducts?systemVersion=4.4.2&phoneModel=N1&deviceId=35228404067080800%3AFF%3AC3%3A08%3A2C%3ABB&version=2.1.5&source=3&sort=0&pageid=com.android.benlai.activity.MainActivity&localcity=246&offset=0&sign=A77CD93542DC5BFC1AA60AE9001B2630&limit=20&channel=xiaomi";
 
 
 }
