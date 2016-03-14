@@ -1,5 +1,7 @@
 package kf.qf.com.benlai.activity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -46,7 +48,6 @@ public class CityActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationIcon(R.drawable.delcha);
         //初始化搜索框
         initSouSuo();
         //头部
@@ -56,6 +57,36 @@ public class CityActivity extends AppCompatActivity {
         //初始化所有城市
         initRecyclerViewAll();
 
+    }
+
+    //给叉设置点击事件
+    public void click_close(View view){
+        finish();
+    }
+
+    //给热门城市条目设置监听
+    public void tv_hotcity(View view){
+        Log.d(TAG, "tv_hotcity: " + view.getTag());
+        Intent intent = getIntent();
+        String cityNo = view.getTag().toString();
+        intent.putExtra("cityNo",cityNo);
+        TextView tv = (TextView)view;
+        String cityName = (String) tv.getText();
+        intent.putExtra("cityName", cityName);
+        //往共享参数里面存
+        SharedPreferences.Editor editor= getSharedPreferences("benlai",MODE_PRIVATE).edit();
+        editor.putString("cityName", cityName);
+        editor.putString("cityNo", cityNo);
+        editor.commit();
+        int startTimes=getSharedPreferences("benlai",MODE_PRIVATE).getInt("startTimes",0);
+        if (startTimes==0){
+            startActivity(new Intent(this,MainActivity.class));
+        }else {
+            //返回启动它的activity
+            setResult(11);
+        }
+
+        finish();
     }
 
     private void initSlid() {

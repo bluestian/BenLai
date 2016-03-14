@@ -24,8 +24,8 @@ public class WelcomActivity extends BaseActivity {
         handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    boolean aBoolean = getSharedPreferences("flag", MODE_PRIVATE).getBoolean("isFirst",true);
-                    if (aBoolean==false){
+                    String cityName = getSharedPreferences("benlai", MODE_PRIVATE).getString("cityName","");
+                    if (!cityName.equals("")){
                         startActivity(new Intent(WelcomActivity.this,MainActivity.class));
                         finish();
                     }else {

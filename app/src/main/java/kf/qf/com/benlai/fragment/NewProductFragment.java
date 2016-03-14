@@ -1,10 +1,9 @@
-package kf.qf.com.benlai.activity;
+package kf.qf.com.benlai.fragment;
 
 import android.net.Uri;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
@@ -27,14 +26,10 @@ import static kf.qf.com.benlai.entity.NewProduectEntity.DataEntity;
 public class NewProductFragment extends BaseFragment implements OkHttpUtil.OnDownDataListener {
 
     private static final String TAG = "print";
-    private Button button;
-    private List<NewProduectEntity.DataEntity.ItemListEntity> mlist;//新品页的数据；
-
+    private List<DataEntity.ItemListEntity> mlist;//新品页的数据；
     private SimpleDraweeView simpleDraweeView;
     private RecyclerView mrecyclerView;
     private GvAdapter gvAdapter;
-
-     private View headerView;
     protected int contentViewGetid() {
         return R.layout.fragment_newproduct;
     }
@@ -52,10 +47,12 @@ public class NewProductFragment extends BaseFragment implements OkHttpUtil.OnDow
 
     }
 
-    @Override
-    protected void loadData() {
+
+    public void loadData(String cityNo) {
         //下载数据;
-        OkHttpUtil.downJSON(URLS.XINPIN, this);
+        String xinpin = String.format(URLS.XINPIN, URLS.deviceId, cityNo);
+
+        OkHttpUtil.downJSON(xinpin, this);
 
 
     }

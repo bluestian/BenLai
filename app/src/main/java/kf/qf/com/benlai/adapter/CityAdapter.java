@@ -38,6 +38,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.tv.setText(list.get(position).getCityName());
+        holder.tv.setTag(list.get(position).getCityNo());
     }
 
     @Override
@@ -51,6 +52,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.MyViewHolder> 
         public MyViewHolder(View itemView) {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.tv_hotcity);
+
 
         }
     }

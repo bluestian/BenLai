@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="kf.qf.com.benlai.activity.MainActivity">
 
-    tools:context="com.example.yzy.benlai.MainActivity">
-
-    <FrameLayout
-        android:id="@+id/fg_newpro"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?attr/colorPrimary">
 
-    <Button
-        android:onClick="btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-         android:layout_alignParentBottom="true"
-        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_selectCity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:drawableLeft="@drawable/city"
+                    android:gravity="center"
+                    android:onClick="click"
+                    android:text="北京"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tv_checkGoods"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:drawableBottom="@drawable/pop_ico02"
+                    android:drawableRight="@drawable/sousuo"
+                    android:onClick="click"
+                    android:paddingLeft="5dp"
+                    android:text="搜索所有的商品"
+                    android:textColor="#cccccc" />
+
+                <ImageView
+                    android:id="@+id/iv_QRcode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="click"
+                    android:src="@drawable/giftexchangeqr" />
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="90dp"
+        android:layout_marginRight="10dp"
+        android:elevation="0dp"
+        android:scaleType="center"
+        android:src="@drawable/icon_fast_to_top" />
 
 
-</RelativeLayout>
+    <include layout="@layout/content_main" />
+
+
+</android.support.design.widget.CoordinatorLayout>

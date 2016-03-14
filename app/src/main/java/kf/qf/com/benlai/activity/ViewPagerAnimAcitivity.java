@@ -120,9 +120,6 @@ public class ViewPagerAnimAcitivity extends BaseActivity implements View.OnClick
 
 
                     startActivity(new Intent(ViewPagerAnimAcitivity.this, CityActivity.class));
-                    SharedPreferences.Editor editor = getSharedPreferences("flag", MODE_PRIVATE).edit();
-                    editor.putBoolean("isFirst",false);
-                    editor.commit();
                     finish();
                 }
             });
